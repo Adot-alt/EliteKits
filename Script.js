@@ -1,18 +1,23 @@
-const cards = document.querySelectorAll(".card");
+let cart = [];
+let total = 0;
 
-// Function to show cards when scrolling
-function showCards() {
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-
-    if (top < window.innerHeight - 100) {
-      card.classList.add("show");
-    }
-  });
+function addToCart(name, price) {
+  cart.push({ name, price });
+  total += price;
+  updateCart();
 }
 
-// Run on scroll
-window.addEventListener("scroll", showCards);
+function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  const totalEl = document.getElementById("total");
 
-// Run once when page loads
-showCards();
+  cartItems.innerHTML = "";
+
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item.name + " - €" + item.price;
+    cartItems.appendChild(li);
+  });
+
+  totalEl.textContent = "Total: €" + total.toFixed(2);
+}
