@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  color: #aaa;
+}
+
+/* PRODUCTS SECTION */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+/* PRODUCT CARD */
+.card {
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  width: 220px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* SHOW ANIMATION */
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
